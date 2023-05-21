@@ -1,0 +1,6 @@
+/Users/timofejbarzasvili/CLionProjects/PasswordManager/cmake-build-debug/CMakeFiles/PasswordManager.dir
+/Users/timofejbarzasvili/CLionProjects/PasswordManager/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/timofejbarzasvili/CLionProjects/PasswordManager/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/timofejbarzasvili/CLionProjects/PasswordManager/cmake-build-debug/_deps/fmt-build/CMakeFiles/fmt.dir
+/Users/timofejbarzasvili/CLionProjects/PasswordManager/cmake-build-debug/_deps/fmt-build/CMakeFiles/edit_cache.dir
+/Users/timofejbarzasvili/CLionProjects/PasswordManager/cmake-build-debug/_deps/fmt-build/CMakeFiles/rebuild_cache.dir

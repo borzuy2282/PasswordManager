@@ -1,0 +1,9 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -DCMAKE_CXX_COMPILER=/usr/local/bin/g++-11 -G Ninja -S /Users/timofejbarzasvili/CLionProjects/PasswordManager -B /Users/timofejbarzasvili/CLionProjects/PasswordManager/cmake-build-debug
+-- Module support is disabled.
+-- Version: 9.1.0
+-- Build type: Debug
+-- CXX_STANDARD: 20
+-- Required features: cxx_variadic_templates
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/timofejbarzasvili/CLionProjects/PasswordManager/cmake-build-debug
