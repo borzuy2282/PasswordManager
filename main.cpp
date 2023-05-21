@@ -4,7 +4,10 @@
 #include <thread>
 #include <algorithm>
 
-
+/**
+ * \brief Here is the main function of a project.
+ * @return
+ */
 
 
 auto main() -> int{
