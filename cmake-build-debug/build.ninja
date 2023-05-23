@@ -53,6 +53,13 @@ build CMakeFiles/PasswordManager.dir/main.cpp.o: CXX_COMPILER__PasswordManager_D
   OBJECT_DIR = CMakeFiles/PasswordManager.dir
   OBJECT_FILE_DIR = CMakeFiles/PasswordManager.dir
 
+build CMakeFiles/PasswordManager.dir/password.cpp.o: CXX_COMPILER__PasswordManager_Debug /Users/timofejbarzasvili/CLionProjects/PasswordManager/password.cpp || cmake_object_order_depends_target_PasswordManager
+  DEP_FILE = CMakeFiles/PasswordManager.dir/password.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -fdiagnostics-color=always -std=gnu++20
+  INCLUDES = -I/Users/timofejbarzasvili/CLionProjects/PasswordManager/cmake-build-debug/_deps/fmt-src/include
+  OBJECT_DIR = CMakeFiles/PasswordManager.dir
+  OBJECT_FILE_DIR = CMakeFiles/PasswordManager.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target PasswordManager
@@ -61,7 +68,7 @@ build CMakeFiles/PasswordManager.dir/main.cpp.o: CXX_COMPILER__PasswordManager_D
 #############################################
 # Link the executable PasswordManager
 
-build PasswordManager: CXX_EXECUTABLE_LINKER__PasswordManager_Debug CMakeFiles/PasswordManager.dir/main.cpp.o | _deps/fmt-build/libfmtd.a || _deps/fmt-build/libfmtd.a
+build PasswordManager: CXX_EXECUTABLE_LINKER__PasswordManager_Debug CMakeFiles/PasswordManager.dir/main.cpp.o CMakeFiles/PasswordManager.dir/password.cpp.o | _deps/fmt-build/libfmtd.a || _deps/fmt-build/libfmtd.a
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6
   LINK_LIBRARIES = _deps/fmt-build/libfmtd.a
   OBJECT_DIR = CMakeFiles/PasswordManager.dir

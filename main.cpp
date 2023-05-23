@@ -1,8 +1,4 @@
-#include <fmt/ranges.h>
-#include <vector>
-#include <iostream>
-#include <thread>
-#include <algorithm>
+#include "funcs.h"
 
 /**
  * \brief Here is the main function of a project.
@@ -13,6 +9,6 @@
 auto main() -> int{
 
 
-
+    fmt::print("Hello, world!");
     return 0;
 }

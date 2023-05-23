@@ -1,6 +1,11 @@
 # ninja log v5
 4	3947	1684632193916102155	_deps/fmt-build/CMakeFiles/fmt.dir/src/os.cc.o	76c85c206aaf0e11
 1	4164	1684632194136424743	CMakeFiles/PasswordManager.dir/main.cpp.o	3469b0fa9cd7efbc
+6244	6382	1684632196357292652	PasswordManager	bb795bc2f64d8a58
 2	6158	1684632196115275416	_deps/fmt-build/CMakeFiles/fmt.dir/src/format.cc.o	3d367ab6b2550acf
 6158	6244	1684632196222933000	_deps/fmt-build/libfmtd.a	4d3fcd7d1461ea42
-6244	6382	1684632196357292652	PasswordManager	bb795bc2f64d8a58
+8	2857	1684812074012433130	CMakeFiles/PasswordManager.dir/main.cpp.o	3469b0fa9cd7efbc
+10	3180	1684812074337053916	CMakeFiles/PasswordManager.dir/password.cpp.o	a286df6057395f92
+3181	3368	1684812074520710033	PasswordManager	dba34d807f19bda7
+7	2135	1684812105053177464	CMakeFiles/PasswordManager.dir/main.cpp.o	3469b0fa9cd7efbc
+2136	2305	1684812105216727454	PasswordManager	dba34d807f19bda7
