@@ -5,12 +5,14 @@
 #include <algorithm>
 #include <iostream>
 #include <fmt/ranges.h>
+#include <map>
+#include <utility>
+
 
 
 class Password {
     std::string name;
     std::string password;
-    std::string category;
     std::string login;
     std::string website;
 public:
@@ -21,7 +23,7 @@ public:
      *
      * @param name will be a name
      */
-    Password(std::string name);
+    Password(std::string name, std::string password);
 
     /**
      * \brief gets a name.
@@ -54,5 +56,41 @@ public:
      * @param password
      *
     */
-    void setPassword(std::string password);
+    void setPassword(std::string &password);
+
+    /**
+     * \brief analog of toString().
+     * Function helps us to write an info about a password.
+     *
+     * @param password gives a password to print.
+     * @param ostream gives an output stream.
+     */
+    friend std::ostream &operator<<(std::ostream &, const Password &);
+};
+
+struct Application{
+    /**
+     * \var is a map of categories.
+     * We are storing an information about passwords in a specific categories.
+     */
+     static std::map<std::string, std::vector<Password>> categories;
+
+public:
+    /**
+     * \brief initialize a map.
+     * Create a map with already one pair(None category and empty vector of passwords in it.
+     */
+    static void initCategories();
+    /**
+     * \brief adds a category.
+     * Creates a new category and adds it to a map.
+     */
+    static void addCategory();
+    /**
+     * \brief adds a password to a category.
+     * Adds a password to a specific category.
+     * @param category is a category which we want to fill with a password.
+     * @param password is a password which we want to add.
+     */
+    static void addPassword(const std::string &category, const Password &password);
 };

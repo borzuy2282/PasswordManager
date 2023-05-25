@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['generate_0',['generate',['../class_password.html#a6898fec016b151cb215bc43a6d0bd4ca',1,'Password']]],
-  ['getname_1',['getName',['../class_password.html#a88aed06d8ebb098a1b2dac58c72d591b',1,'Password']]]
+  ['categories_0',['categories',['../struct_application.html#af094823caadf3f40f23c64766eafb221',1,'Application']]],
+  ['create_1',['create',['../class_password.html#ad5025e87a292d1e1bfa5d23d9d7c55f7',1,'Password']]]
 ];

@@ -7,8 +7,9 @@
 
 
 auto main() -> int{
+    Application::initCategories();
+    Password::create();
+    std::cout << Application::categories["None"][0];
 
-
-    fmt::print("Hello, world!");
     return 0;
 }

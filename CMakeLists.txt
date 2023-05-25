@@ -12,5 +12,5 @@ FetchContent_Declare(
 )
 
 FetchContent_MAkeAvailable(fmt)
-add_executable(PasswordManager main.cpp password.cpp)
+add_executable(PasswordManager main.cpp password.cpp application.cpp)
 target_link_libraries(PasswordManager fmt)

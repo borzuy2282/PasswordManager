@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['password_0',['Password',['../class_password.html',1,'']]]
+  ['application_0',['Application',['../struct_application.html',1,'']]]
 ];
