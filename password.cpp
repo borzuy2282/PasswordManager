@@ -7,16 +7,27 @@ Password::Password(std::string n, std::string p){
     password = std::move(p);
 }
 
-
-std::string Password::getName() {
-    return Password::name;
-}
-
-
 void Password::create() {
     std::string name;
     std::cout << "So, first i need a name for your password, please enter it: " << std::endl;
     std::getline(std::cin, name);
+    bool checker = true;
+    for(auto itr = Application::categories.begin(); itr != Application::categories.end(); itr++){
+        for(int i = 0; i < itr->second.size(); i++){
+            if(itr->second[i].name == name){
+                checker = false;
+                break;
+            }
+        }
+        if(!checker){
+            break;
+        }
+    }
+    if(!checker){
+        std::cout << "\nThere already was a password like that, you need to come up with another one"<<std::endl;
+        Password::create();
+        return;
+    }
     int input;
     fmt::print("1 - create your own password.\n2 - generate a password.\n0 - exit.\nWhat will you choose: ");
     std::cin >> input;
@@ -67,7 +78,6 @@ void Password::create() {
 
     std::set<char>uniq;
     bool arr[4] = {true, true, true, true};
-
     for(char i : pw){
         uniq.insert(i);
         if(std::isdigit(i) && arr[0]){
@@ -93,16 +103,16 @@ void Password::create() {
         security += 10;
     }
     std::string power;
-    if(security <= 20){
+    if(security <= 10){
         power = "weak";
-    } else if(security <= 40){
+    } else if(security <= 20){
         power = "normal";
-    } else if(security <= 50){
+    } else if(security <= 30){
         power = "strong";
     } else {
         power = "very strong";
     }
-    bool checker = true;
+    checker = true;
     for(auto itr = Application::categories.begin(); itr != Application::categories.end(); itr++){
         for(int i = 0; i < itr->second.size(); i++){
             if(itr->second[i].password == pw){
@@ -115,14 +125,31 @@ void Password::create() {
         }
     }
     if(!checker){
-        std::cout << "\nThere already was a password like that, you need to came up with another one"<<std::endl;
+        std::cout << "\nThere already was a password like that, you need to come up with another one"<<std::endl;
         Password::create();
         return;
     }
-
+    std::string login = "";
+    std::string website = "";
+    std::cout << "Do you want to provide a login? 1- yes" << std::endl;
+    std::cin >> input;
+    std::cin.ignore();
+    if(input == 1){
+        std::cout << "Provide it here, pls:" << std::endl;
+        std::getline(std::cin, login);
+    }
+    std::cout << "\nDo you want to provide a website? 1- yes" << std::endl;
+    std::cin >> input;
+    std::cin.ignore();
+    if(input == 1){
+        std::cout << "Provide it here, pls:" << std::endl;
+        std::getline(std::cin, website);
+    }
     std::cout << "Your name is: " << name << std::endl;
     std::cout << "Your password is: " << pw << std::endl;
     std::cout << "It is a " << power << " one!" << std::endl;
+    std::cout << "Your login is: " << login << std::endl;
+    std::cout << "Your website is: " << website << std::endl;
     fmt::print("Do you want to confirm this password?\n1 - yes.\nType your answer: ");
     std::cin >> input;
     std::cin.ignore();
@@ -131,16 +158,18 @@ void Password::create() {
     }
     std::cout << "\n";
     Password p(name, pw);
+    p.setLogin(login);
+    p.setWebsite(website);
     std::cout << "Do you want to add it to some category? 1 - yes: ";
     std::cin >> input;
     std::cin.ignore();
     if(input == 1) {
-        bool checker = true;
+        checker = true;
         while (checker) {
             std::string cname;
             std::cout << "\nPlease, provide category's name: " << std::endl;
             std::getline(std::cin, cname);
-            if (Application::getCategories().find(cname) != Application::getCategories().end()) {
+            if (Application::categories.find(cname) != Application::categories.end()) {
                 Application::addPassword(cname, p);
                 checker = false;
             }else{
@@ -148,6 +177,8 @@ void Password::create() {
                 std::cin >> input;
                 std::cin.ignore();
                 if(input != 1){
+                    std::cout << "Then we add it to the None category." << std::endl;
+                    Application::categories["None"].push_back(p);
                     checker = false;
                 }
             }
@@ -213,11 +244,37 @@ std::string Password::generate() {
     }
     return returner;
 }
-
-void Password::setPassword(std::string &p) {
-    password = std::move(p);
+void Password::setName(const std::string &name) {
+    Password::name = name;
 }
 
+void Password::setPassword(std::string &p) {
+    this->password = p;
+}
+
+void Password::setLogin(std::string &login){
+    this->login = login;
+}
+
+void Password::setWebsite(std::string &website) {
+    this->website = website;
+}
 std::ostream &operator<<(std::ostream &os, const Password &pw) {
-    return os << "Your name is: " << pw.name << "\nYour password is: " << pw.password << "\n";
+    return os << "Your name is: " << pw.name << "\nYour password is: " << pw.password << "\nYour login is: " << pw.login << "\nYour website is: " << pw.website << std::endl;
+}
+
+const std::string &Password::getName() const{
+    return Password::name;
+}
+
+const std::string &Password::getPassword() const {
+    return password;
+}
+
+const std::string &Password::getLogin() const {
+    return login;
+}
+
+const std::string &Password::getWebsite() const {
+    return website;
 }

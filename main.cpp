@@ -9,7 +9,8 @@
 auto main() -> int{
     Application::initCategories();
     Password::create();
-    std::cout << Application::categories["None"][0];
-
+    Application::printInfo();
+    Application::changePassword();
+    Application::printInfo();
     return 0;
 }

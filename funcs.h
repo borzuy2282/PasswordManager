@@ -21,7 +21,8 @@ public:
      * \brief constructor of Password object.
      * Creates an object of type class.
      *
-     * @param name will be a name
+     * @param name will be a name.
+     * @param password will be a password itself.
      */
     Password(std::string name, std::string password);
 
@@ -31,7 +32,57 @@ public:
      * @return name
      *
     */
-    std::string getName();
+    const std::string &getName() const;
+
+    /**
+     * \brief gets a password.
+     *
+     * @return password
+     */
+    const std::string &getPassword() const;
+
+    /**
+     * \brief gets a login.
+     *
+     * @return login
+     */
+    const std::string &getLogin() const;
+
+    /**
+     * \brief gets a website.
+     *
+     * @return website
+     */
+    const std::string &getWebsite() const;
+
+    /**
+     * \brief sets a name manually.
+     *
+     * @param name
+     */
+    void setName(const std::string &name);
+
+    /**
+    * \brief sets a password manually.
+    *
+    * @param password
+    *
+    */
+    void setPassword(std::string &password);
+
+    /**
+     * \brief sets a login manually.
+     *
+     * @param login
+     */
+    void setLogin(std::string &login);
+
+    /**
+     * \brief sets a website manually.
+     *
+     * @param website
+     */
+    void setWebsite(std::string &website);
 
     /**
      * \brief creates a password.
@@ -50,15 +101,6 @@ public:
     static std::string generate();
 
     /**
-     * \brief sets a password.
-     * Sets a password manually.
-     *
-     * @param password
-     *
-    */
-    void setPassword(std::string &password);
-
-    /**
      * \brief analog of toString().
      * Function helps us to write an info about a password.
      *
@@ -69,6 +111,7 @@ public:
 };
 
 struct Application{
+
     /**
      * \var is a map of categories.
      * We are storing an information about passwords in a specific categories.
@@ -76,16 +119,19 @@ struct Application{
      static std::map<std::string, std::vector<Password>> categories;
 
 public:
+
     /**
      * \brief initialize a map.
      * Create a map with already one pair(None category and empty vector of passwords in it.
      */
     static void initCategories();
+
     /**
      * \brief adds a category.
      * Creates a new category and adds it to a map.
      */
     static void addCategory();
+
     /**
      * \brief adds a password to a category.
      * Adds a password to a specific category.
@@ -93,4 +139,16 @@ public:
      * @param password is a password which we want to add.
      */
     static void addPassword(const std::string &category, const Password &password);
+
+    /**
+     * \brief changes password.
+     * Finds a password by a name and propose to change all its info(optional, user can even change nothing).
+     */
+    static void changePassword();
+
+    /**
+     * \brief prints info.
+     * Prints all information about all categories and all information about passwords in them.
+     */
+    static void printInfo();
 };
