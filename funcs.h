@@ -151,4 +151,20 @@ public:
      * Prints all information about all categories and all information about passwords in them.
      */
     static void printInfo();
+    /**
+     * \brief searches by name.
+     * Searches a password's information by a name.
+     */
+    static void searchName();
+    /**
+     * \brief searches by password.
+     * Searches a password's information by a password.
+     */
+    static void searchPass();
+    /**
+     * \brief searching function.
+     * Uses other searching functions, adds an interface to interact with a user.
+     */
+    static void search();
+
 };

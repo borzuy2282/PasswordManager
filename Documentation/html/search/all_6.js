@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['setlogin_0',['setLogin',['../class_password.html#a534a171e543684fafd7f0223e5fb47af',1,'Password']]],
-  ['setname_1',['setName',['../class_password.html#a1f2364ffa6db660c1f436b6db576a44a',1,'Password']]],
-  ['setpassword_2',['setPassword',['../class_password.html#a13c10bb93565ec2ef873e0da2191bf57',1,'Password']]],
-  ['setwebsite_3',['setWebsite',['../class_password.html#a0fc786297c741e8750be6f27919a70ff',1,'Password']]]
+  ['password_0',['Password',['../class_password.html',1,'Password'],['../class_password.html#ad3e963eb0ef7d82ab9b65944f41041da',1,'Password::Password()']]],
+  ['printinfo_1',['printInfo',['../struct_application.html#ac04aa7048b7bb2972a37a8c7b31634fb',1,'Application']]]
 ];

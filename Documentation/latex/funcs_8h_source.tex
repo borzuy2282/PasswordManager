@@ -1,0 +1,69 @@
+\doxysection{funcs.\+h}
+\hypertarget{funcs_8h_source}{}\label{funcs_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <fmt/ranges.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_password}{Password}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00015\ \ \ \ \ std::string\ password;}
+\DoxyCodeLine{00016\ \ \ \ \ std::string\ login;}
+\DoxyCodeLine{00017\ \ \ \ \ std::string\ website;}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_password}{Password}}(std::string\ name,\ std::string\ password);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{class_password_a3bcd99a13c55c158524f128bcd26c0c5}{getName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{class_password_aa7e66161cbac10fa32fa8f255e178e0d}{getPassword}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{class_password_a65ab488b3f588d6c89f2f8bede2c2ab3}{getLogin}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{class_password_af9e8e572b6d9ccf12516daccf380e981}{getWebsite}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_password_a1f2364ffa6db660c1f436b6db576a44a}{setName}}(\textcolor{keyword}{const}\ std::string\ \&name);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_password_a13c10bb93565ec2ef873e0da2191bf57}{setPassword}}(std::string\ \&password);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_password_a534a171e543684fafd7f0223e5fb47af}{setLogin}}(std::string\ \&login);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_password_a0fc786297c741e8750be6f27919a70ff}{setWebsite}}(std::string\ \&website);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_password_ad5025e87a292d1e1bfa5d23d9d7c55f7}{create}}();}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{class_password_a6898fec016b151cb215bc43a6d0bd4ca}{generate}}();}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&\mbox{\hyperlink{class_password_a9820cec572bc66245222079222dd77f7}{operator<<}}(std::ostream\ \&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_password}{Password}}\ \&);}
+\DoxyCodeLine{00111\ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_application}{Application}}\{}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::vector<Password>>\ \mbox{\hyperlink{struct_application_af094823caadf3f40f23c64766eafb221}{categories}};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_application_ad3c58b848e761823aefae8e47c0a1dad}{initCategories}}();}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_application_a572a568bec768dfee1c21a266493a4a9}{addCategory}}();}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_application_a0b2d1027b70696aba3e5ebdfdcc37780}{addPassword}}(\textcolor{keyword}{const}\ std::string\ \&category,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_password}{Password}}\ \&password);}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_application_a1175b18241426313cab671e8c8f1b014}{changePassword}}();}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_application_ac04aa7048b7bb2972a37a8c7b31634fb}{printInfo}}();}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_application_a2a3315a8099865453a9019197e8b2767}{searchName}}();}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_application_a59ab20afdbdc8d582083ab11c3bebc60}{searchPass}}();}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_application_a4e1178fb9be4a4a69561d1b235cd13d7}{search}}();}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \};}
+
+\end{DoxyCode}

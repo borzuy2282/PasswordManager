@@ -200,4 +200,65 @@ void Application::printInfo() {
     }
 }
 
+void Application::searchName() {
+    std::cout << "Please, provide me a name of the password:\n";
+    std::string name;
+    bool flag = true;
+    std::getline(std::cin, name);
+    for(auto itr = Application::categories.begin(); itr != Application::categories.end(); itr++){
+        for(int i = 0; i < itr->second.size(); i++){
+            if(name == itr->second[i].getName()){
+                std::cout << "Here is an information about your password:\n" << itr->second[i] << std::endl;
+                flag = false;
+                break;
+            }
+        }
+        if(!flag){
+            break;
+        }
+    }
+}
+
+void Application::searchPass() {
+    std::cout << "Please, provide me a password, that you want to find:\n";
+    std::string pass;
+    std::getline(std::cin, pass);
+    bool flag = true;
+    for(auto itr = Application::categories.begin(); itr != Application::categories.end(); itr++){
+        for(int i = 0; i < itr->second.size(); i++){
+            if(pass == itr->second[i].getName()){
+                std::cout << "Here is an information about your password:\n" << itr->second[i] << std::endl;
+                flag = false;
+                break;
+            }
+        }
+        if(!flag){
+            break;
+        }
+    }
+}
+
+void Application::search() {
+    std::cout << "How do you want to find an information? 1 - by name, 2 - by password:\n";
+    int input;
+    std::cin >> input;
+    std::cin.ignore();
+    switch(input){
+        case 1:
+            searchName();
+            break;
+        case 2:
+            searchPass();
+            break;
+        default:
+            std::cout << "Something got wrong, do you want to try again? 1 - yes:\n";
+            std::cin >> input;
+            std::cin.ignore();
+            if(input == 1){
+                search();
+                return;
+            }
+    }
+}
+
 
