@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['readout_0',['readOut',['../struct_application.html#a2d4efa2697a60dcf4774231050f88e21',1,'Application']]]
+  ['login_0',['logIn',['../struct_application.html#a022e7ec5c29dd841eedb114ffaded5d8',1,'Application']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operator_3c_3c_0',['operator&lt;&lt;',['../class_password.html#a9820cec572bc66245222079222dd77f7',1,'Password']]]
+  ['here_20is_20an_20information_20about_20the_20project_2e_0',['Here is an information about the project.',['../index.html',1,'']]]
 ];

@@ -330,3 +330,54 @@ void Application::readOut(const std::string& path) {
         words.erase(words.begin(), words.end());
     }
 }
+void Application::deleteCategory() {
+    std::cout << "Please, provide me a name of a category you want delete:" << std::endl;
+    std::string input;
+    std::getline(std::cin, input);
+    if(input == "None"){
+        Application::categories["None"].clear();
+        std::cout << "None category was cleared, but can not be deleted!" << std::endl;
+        return;
+    }
+    int result = Application::categories.erase(input);
+    if(result == 1){
+        std::cout << "Deleted " << input << std::endl;
+    }else{
+        std::cout << "No category with this name, try again." << std::endl;
+    }
+}
+void Application::deletePassword() {
+    std::cout << "Please, provide me a name of a password you want delete:" << std::endl;
+    std::string input;
+    std::getline(std::cin, input);
+    bool flag = true;
+    for(auto itr = Application::categories.begin(); itr != Application::categories.end(); itr++){
+        for(int i = 0; i < itr->second.size(); i++){
+            if(itr->second[i].getName() == input){
+                itr->second.erase(itr->second.begin() + i);
+                flag = false;
+                break;
+            }
+        }
+        if(!flag){
+            break;
+        }
+    }
+    if(flag){
+        std::cout << "Deleted " << input << std::endl;
+    }else{
+        std::cout << "No password with this name, try again." << std::endl;
+    }
+}
+void Application::logIn() {
+    std::cout << "Please pass me a password to log in to application.\n";
+    std::string input;
+    std::getline(std::cin, input);
+    if(input != Application::mainPassword){
+        std::cout << "Wrong password! Try again\n";
+        Application::logIn();
+        return;
+    }else{
+        std::cout << "Welcome back!" << std::endl;
+    }
+}

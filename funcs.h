@@ -160,16 +160,19 @@ public:
      * Prints all information about all categories and all information about passwords in them.
      */
     static void printInfo();
+
     /**
      * \brief searches by name.
      * Searches a password's information by a name.
      */
     static void searchName();
+
     /**
      * \brief searches by password.
      * Searches a password's information by a password.
      */
     static void searchPass();
+
     /**
      * \brief searching function.
      * Uses other searching functions, adds an interface to interact with a user.
@@ -190,5 +193,21 @@ public:
      */
     static void readOut(const std::string& path);
 
-    //todo: func for main password
+    /**
+     * \brief deletes password.
+     * Looks for a password and if finds it - deletes it.
+     */
+    static void deletePassword();
+
+    /**
+     * \brief deletes category.
+     * Looks for a category and if finds it - deletes it and all passwords category contains.
+     */
+    static void deleteCategory();
+
+    /**
+     * \brief log in.
+     * Asks user for a password and checks if it is correct.
+     */
+    static void logIn();
 };
