@@ -1,10 +1,8 @@
 #include "funcs.h"
 
 std::map<std::string, std::vector<Password>> Application::categories;
-
-void Application::initCategories() {
-    categories.insert(std::make_pair("None", std::vector<Password>()));
-}
+std::string Application::mainPassword = "qwerty123";
+char Application::key = 'B';
 
 void Application::addCategory() {
     std::string name;
@@ -260,5 +258,75 @@ void Application::search() {
             }
     }
 }
+void Application::writeIn(const std::string& path) {
+    std::ofstream writing(path);
+    for(auto itr = Application::categories.begin(); itr != Application::categories.end(); itr++){
+        for(int i = 0; i < itr->second.size(); i++){
+            for(int j = 0; j < itr->first.size(); j++){
+                char input = itr->first[j] ^ Application::key;
+                writing << input;
+            }
+            writing << " ";
+            for(int j = 0; j < itr->second[i].getName().size(); j++){
+                char input = itr->second[i].getName()[j] ^ Application::key;
+                writing << input;
+            }
+            writing << " ";
+            for(int j = 0; j < itr->second[i].getPassword().size(); j++){
+                char input = itr->second[i].getPassword()[j] ^ Application::key;
+                writing << input;
+            }
+            writing << " ";
+            for(int j = 0; j < itr->second[i].getLogin().size(); j++){
+                char input = itr->second[i].getLogin()[j] ^ Application::key;
+                writing << input;
+            }
+            writing << " ";
+            for(int j = 0; j < itr->second[i].getWebsite().size(); j++){
+                char input = itr->second[i].getWebsite()[j] ^ Application::key;
+                writing << input;
+            }
+            writing << "\n";
+        }
+    }
+    writing.close();
+}
 
-
+void Application::readOut(const std::string& path) {
+    std::ifstream reading(path);
+    std::string line;
+    while(std::getline(reading, line)){
+        std::vector<std::string> words;
+        std::string word;
+        std::istringstream iss(line);
+        while(iss >> word){
+            words.push_back(word);
+        }
+        std::string category;
+        std::string name;
+        std::string password;
+        std::string login;
+        std::string website;
+        for(int i = 0; i < words[0].size(); i++){
+            category += words[0][i] ^ Application::key;
+        }
+        for(int i = 0; i < words[1].size(); i++){
+            name += words[1][i] ^ Application::key;
+        }
+        for(int i = 0; i < words[2].size(); i++){
+            password += words[2][i] ^ Application::key;
+        }
+        for(int i = 0; i < words[3].size(); i++){
+            login += words[3][i] ^ Application::key;
+        }
+        for(int i = 0; i < words[4].size(); i++){
+            website += words[4][i] ^ Application::key;
+        }
+        Application::categories.insert(std::make_pair(category, std::vector<Password>()));
+        Password p(name, password);
+        p.setLogin(login);
+        p.setWebsite(website);
+        Application::categories[category].push_back(p);
+        words.erase(words.begin(), words.end());
+    }
+}

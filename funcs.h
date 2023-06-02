@@ -7,6 +7,9 @@
 #include <fmt/ranges.h>
 #include <map>
 #include <utility>
+#include <fstream>
+#include <string>
+#include <sstream>
 
 
 
@@ -118,13 +121,19 @@ struct Application{
      */
      static std::map<std::string, std::vector<Password>> categories;
 
-public:
+     /**
+      * \var main password.
+      * We are storing here a password to log in to application.
+      */
+     static std::string mainPassword;
 
-    /**
-     * \brief initialize a map.
-     * Create a map with already one pair(None category and empty vector of passwords in it.
-     */
-    static void initCategories();
+     /**
+      * \var key for crypt.
+      * This is a key to encrypt and decrypt data.
+      */
+     static char key;
+
+public:
 
     /**
      * \brief adds a category.
@@ -167,4 +176,19 @@ public:
      */
     static void search();
 
+    /**
+     * \brief writes data.
+     * Writes a data in a file(already encrypted).
+     * @param path is a path to a file
+     */
+    static void writeIn(const std::string& path);
+
+    /**
+     * \brief reads a data.
+     * Reads a datat from a file(already decrypted).
+     * @param path is a path to a file
+     */
+    static void readOut(const std::string& path);
+
+    //todo: func for main password
 };

@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Password Manager<span id="projectnumber">&#160;Alpha 0.4</span>
+   <div id="projectname">Password Manager<span id="projectnumber">&#160;Alpha 0.6</span>
    </div>
    <div id="projectbrief">ENG 29c PJC s28260</div>
   </td>
@@ -80,10 +80,6 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ad3c58b848e761823aefae8e47c0a1dad"><td class="memItemLeft" align="right" valign="top"><a id="ad3c58b848e761823aefae8e47c0a1dad" name="ad3c58b848e761823aefae8e47c0a1dad"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>initCategories</b> ()</td></tr>
-<tr class="memdesc:ad3c58b848e761823aefae8e47c0a1dad"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialize a map. Create a map with already one pair(None category and empty vector of passwords in it. <br /></td></tr>
-<tr class="separator:ad3c58b848e761823aefae8e47c0a1dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a572a568bec768dfee1c21a266493a4a9"><td class="memItemLeft" align="right" valign="top"><a id="a572a568bec768dfee1c21a266493a4a9" name="a572a568bec768dfee1c21a266493a4a9"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>addCategory</b> ()</td></tr>
 <tr class="memdesc:a572a568bec768dfee1c21a266493a4a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds a category. Creates a new category and adds it to a map. <br /></td></tr>
@@ -111,11 +107,23 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>searchPass</b>
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>search</b> ()</td></tr>
 <tr class="memdesc:a4e1178fb9be4a4a69561d1b235cd13d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">searching function. Uses other searching functions, adds an interface to interact with a user. <br /></td></tr>
 <tr class="separator:a4e1178fb9be4a4a69561d1b235cd13d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2040740d2ba34ebdbabbfd38cdf5ccc6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_application.html#a2040740d2ba34ebdbabbfd38cdf5ccc6">writeIn</a> (const std::string &amp;path)</td></tr>
+<tr class="memdesc:a2040740d2ba34ebdbabbfd38cdf5ccc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">writes data. Writes a data in a file(already encrypted).  <br /></td></tr>
+<tr class="separator:a2040740d2ba34ebdbabbfd38cdf5ccc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d4efa2697a60dcf4774231050f88e21"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_application.html#a2d4efa2697a60dcf4774231050f88e21">readOut</a> (const std::string &amp;path)</td></tr>
+<tr class="memdesc:a2d4efa2697a60dcf4774231050f88e21"><td class="mdescLeft">&#160;</td><td class="mdescRight">reads a data. Reads a datat from a file(already decrypted).  <br /></td></tr>
+<tr class="separator:a2d4efa2697a60dcf4774231050f88e21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:af094823caadf3f40f23c64766eafb221"><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::string, std::vector&lt; <a class="el" href="class_password.html">Password</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_application.html#af094823caadf3f40f23c64766eafb221">categories</a></td></tr>
 <tr class="separator:af094823caadf3f40f23c64766eafb221"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a928e47843adf1cba6fafbe86ec0880d4"><td class="memItemLeft" align="right" valign="top"><a id="a928e47843adf1cba6fafbe86ec0880d4" name="a928e47843adf1cba6fafbe86ec0880d4"></a>
+static std::string&#160;</td><td class="memItemRight" valign="bottom"><b>mainPassword</b> = &quot;qwerty123&quot;</td></tr>
+<tr class="separator:a928e47843adf1cba6fafbe86ec0880d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a364dbe36159ce2765ff9a1baf4535bc3"><td class="memItemLeft" align="right" valign="top"><a id="a364dbe36159ce2765ff9a1baf4535bc3" name="a364dbe36159ce2765ff9a1baf4535bc3"></a>
+static char&#160;</td><td class="memItemRight" valign="bottom"><b>key</b> = 'B'</td></tr>
+<tr class="separator:a364dbe36159ce2765ff9a1baf4535bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a0b2d1027b70696aba3e5ebdfdcc37780" name="a0b2d1027b70696aba3e5ebdfdcc37780"></a>
@@ -157,6 +165,74 @@ Static Public Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">category</td><td>is a category which we want to fill with a password. </td></tr>
     <tr><td class="paramname">password</td><td>is a password which we want to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2d4efa2697a60dcf4774231050f88e21" name="a2d4efa2697a60dcf4774231050f88e21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d4efa2697a60dcf4774231050f88e21">&#9670;&#160;</a></span>readOut()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Application::readOut </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>reads a data. Reads a datat from a file(already decrypted). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>is a path to a file </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2040740d2ba34ebdbabbfd38cdf5ccc6" name="a2040740d2ba34ebdbabbfd38cdf5ccc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2040740d2ba34ebdbabbfd38cdf5ccc6">&#9670;&#160;</a></span>writeIn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Application::writeIn </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>writes data. Writes a data in a file(already encrypted). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>is a path to a file </td></tr>
   </table>
   </dd>
 </dl>

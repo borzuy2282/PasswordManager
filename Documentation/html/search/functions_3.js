@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['initcategories_0',['initCategories',['../struct_application.html#ad3c58b848e761823aefae8e47c0a1dad',1,'Application']]]
+  ['password_0',['Password',['../class_password.html#ad3e963eb0ef7d82ab9b65944f41041da',1,'Password']]],
+  ['printinfo_1',['printInfo',['../struct_application.html#ac04aa7048b7bb2972a37a8c7b31634fb',1,'Application']]]
 ];

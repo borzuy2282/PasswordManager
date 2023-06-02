@@ -10,7 +10,6 @@
  */
 
 auto main() -> int{
-    Application::initCategories();
     Password::create();
     Application::printInfo();
     Application::changePassword();

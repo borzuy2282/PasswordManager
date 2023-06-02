@@ -77,23 +77,28 @@ void Password::create() {
     int security = 0;
 
     std::set<char>uniq;
-    bool arr[4] = {true, true, true, true};
+    bool lower = true;
+    bool upper = true;
+    bool punct = true;
+    bool digit = true;
     for(char i : pw){
         uniq.insert(i);
-        if(std::isdigit(i) && arr[0]){
+
+        if(std::islower(i) && lower){
             security += 5;
-            arr[0] = false;
+            lower = false;
         }
-        else if(std::islower(i) && arr[1]){
+        else if(std::isupper(i) && upper) {
             security += 5;
-            arr[1] = false;
+            upper = false;
         }
-        else if(std::isupper(i) && arr[2]){
+        else if(std::ispunct(i) && punct){
             security += 5;
-            arr[2] = false;
-        }else if(std::ispunct(i) && arr[3]){
+            punct = false;
+        }
+        else if(std::isdigit(i) && digit){
             security += 5;
-            arr[3] = false;
+            digit = false;
         }
     }
     if(uniq.size() >= 6){
@@ -129,14 +134,17 @@ void Password::create() {
         Password::create();
         return;
     }
-    std::string login = "";
-    std::string website = "";
+    std::string login = "None";
+    std::string website = "None";
     std::cout << "Do you want to provide a login? 1- yes" << std::endl;
     std::cin >> input;
     std::cin.ignore();
     if(input == 1){
         std::cout << "Provide it here, pls:" << std::endl;
         std::getline(std::cin, login);
+        if(login.empty()){
+            login = "None";
+        }
     }
     std::cout << "\nDo you want to provide a website? 1- yes" << std::endl;
     std::cin >> input;
@@ -144,6 +152,9 @@ void Password::create() {
     if(input == 1){
         std::cout << "Provide it here, pls:" << std::endl;
         std::getline(std::cin, website);
+        if(website.empty()){
+            website = "None";
+        }
     }
     std::cout << "Your name is: " << name << std::endl;
     std::cout << "Your password is: " << pw << std::endl;
@@ -173,12 +184,16 @@ void Password::create() {
                 Application::addPassword(cname, p);
                 checker = false;
             }else{
-                std::cout << "\nThere are no category like that, let's try again? 1 - yes" << std::endl;
+                std::cout << "\nThere are no category like that, do you want to create new? 1 - yes" << std::endl;
                 std::cin >> input;
                 std::cin.ignore();
                 if(input != 1){
                     std::cout << "Then we add it to the None category." << std::endl;
                     Application::categories["None"].push_back(p);
+                    checker = false;
+                }else{
+                    Application::categories.insert(std::make_pair(cname, std::vector<Password>()));
+                    Application::categories[cname].push_back(p);
                     checker = false;
                 }
             }
