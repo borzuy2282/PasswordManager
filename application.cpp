@@ -2,7 +2,7 @@
 
 std::map<std::string, std::vector<Password>> Application::categories;
 std::string Application::mainPassword = "qwerty123";
-char Application::key = 'B';
+char Application::key = 'Q';
 
 void Application::addCategory() {
     std::string name;
@@ -293,7 +293,7 @@ void Application::writeIn(const std::string& path) {
 }
 
 void Application::readOut(const std::string& path) {
-    std::ifstream reading(path);
+    std::ifstream reading(path, std::ios::in);
     std::string line;
     while(std::getline(reading, line)){
         std::vector<std::string> words;
@@ -363,7 +363,7 @@ void Application::deletePassword() {
             break;
         }
     }
-    if(flag){
+    if(!flag){
         std::cout << "Deleted " << input << std::endl;
     }else{
         std::cout << "No password with this name, try again." << std::endl;
